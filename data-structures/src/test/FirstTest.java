@@ -12,5 +12,6 @@ public class FirstTest {
     @Test
     public void test(){
         System.out.println("hello");
+        System.out.println("modify-1");
     }
 }
