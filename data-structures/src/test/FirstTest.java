@@ -14,5 +14,6 @@ public class FirstTest {
         System.out.println("hello");
         System.out.println("hot-fix-1");
         System.out.println("master-test");
+        System.out.println("hot-fix-test");
     }
 }
