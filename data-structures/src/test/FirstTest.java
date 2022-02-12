@@ -13,5 +13,6 @@ public class FirstTest {
     public void test(){
         System.out.println("hello");
         System.out.println("hot-fix-1");
+        System.out.println("hot-fix-test");
     }
 }
