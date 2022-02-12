@@ -2,7 +2,7 @@ package test;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
+
 
 /**
  * @author lzy
@@ -12,7 +12,6 @@ public class FirstTest {
     @Test
     public void test(){
         System.out.println("hello");
-        System.out.println("modify-1");
         System.out.println("hot-fix-1");
     }
 }
