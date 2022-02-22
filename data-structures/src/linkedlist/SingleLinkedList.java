@@ -3,6 +3,7 @@ package linkedlist;
 import org.junit.Test;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  * @author lzy
@@ -101,22 +102,24 @@ public class SingleLinkedList {
         int index = 1;
         while (temp != null){
             if (searchIndex == index){
-                break;
+                return temp;
+                //break;
             }else {
                 temp = temp.next;
                 index++;
             }
         }
-        if (searchIndex == index){
-            return temp;
-        }else {
-            return null;
-        }
+        return null;
+//        if (searchIndex == index){
+//            return temp;
+//        }else {
+//            return null;
+//        }
 
     }
 
     /**
-     * 获取链表长度
+     * 获取链表长度(不包含头节点)
      */
     public int getLength(){
         if (head.next == null){
@@ -135,20 +138,19 @@ public class SingleLinkedList {
      * 新浪面试题
      * 查找单链表中倒数第k个节点    (新浪面试题)
      * 思路
-     * 遍历一遍获取链表长度index
+     * 遍历一遍获取链表长度length
      * 倒数第k个即为size + 1 - k的值
      */
-    public HeroNode getReversedIndex(int index){
+    public HeroNode getReversedIndex(int k){
         if (head.next == null){
             return null;
         }
-
-        int size = getLength();
-        //判断index值的合理性
-        if (index <= 0 || index > size){
+        int length = getLength();
+        //判断长度合理性
+        if (k <= 0 || k > length){
             return null;
         }
-        return searchByIndex(size + 1 - index);
+        return searchByIndex(length + 1 - k);
     }
 
     /**
@@ -158,45 +160,97 @@ public class SingleLinkedList {
      * 思路:创造一个辅助链表用于反转
      *
      * 定义一个新的头节点作为辅助链表的头节点
-     * 遍历链表,将每个节点插入辅助链表的最前端,得到反转后的链表
+     * 遍历链表,将每个节点插入辅助链表的最前端,得到反转后的链表(头插法)
      * 将原链表头指针指向辅助链表,链表反转完成
      */
     public void reverseList(){
-        if (head.next == null){
+        if (head.next == null || head.next.next == null){
             System.out.println("链表为空");
             return;
         }
         //定义一个新的头节点作为辅助链表的头节点
         HeroNode newHead = new HeroNode(0, "", "");
-        //定义一个辅助指针,遍历原来的链表
-        HeroNode temp = head.next;
-        //指向当前节点的下一节点,用来判断原链表是否遍历到最后一个节点
+
+        //定义一个辅助指针用于遍历原来的链表
+        HeroNode cur = head.next;
+        //指向当前节点的下一节点,用于辅助头插
         HeroNode next = null;
-        while (temp != null){
-            //先保存当前指针所在节点的下一个节点,用于遍历顺利进行
-            next = temp.next;
-            //当前遍历节点的下一节点为辅助链表中最前面的节点,保证每次插入的节点都在辅助链表的最前面
-            temp.next = newHead.next;
-            //辅助链表的头节点指向当前遍历到的节点
-            newHead.next = temp;
-            //指针后移
-            temp = next;
+        /**
+         * 遍历原来的链表,每遍历一个节点,将其取出,用头插法放在新链表的最前端
+         * 此部分理解建议画图,画图后豁然开朗
+         */
+        while (cur != null){
+            //用于暂时保存当前节点的下一节点,保证之后的遍历继续进行
+            next = cur.next;
+            //当前节点的下一节点指向新链表中最前面的节点(头插法),此时原链表断开,上面的next即将发挥作用
+            cur.next = newHead.next;
+            //新链表的头节点指向当前节点,完成当前节点的插入
+            newHead.next = cur;
+            //指针后移,遍历继续(next发挥作用)
+            cur = next;
+
         }
         head.next = newHead.next;
-
     }
 
     /**
      * 百度面试题
      * 从尾到头打印单链表
      * 利用栈先入后出的特性即可
+     *
      */
-
+    public void reversePoint(){
+        if (head.next == null){
+            return;
+        }
+        Stack<HeroNode> stack = new Stack<>();
+        HeroNode cur = head.next;
+        while (cur != null){
+            stack.push(cur);
+            cur = cur.next;
+        }
+        while (stack.size() > 0){
+            System.out.println(stack.pop());
+        }
+    }
 
     /**
      * 合并两个有序链表,合并后依然有序
-     * 利用递归
+     * 有问题，会出现无限循环，暂未找到原因
      */
+    public SingleLinkedList mergerLinkedList(SingleLinkedList l1, SingleLinkedList l2){
+        if (l1.head.next == null){
+            return l2;
+        }else if (l2.head.next == null){
+            return l1;
+        }
+
+        SingleLinkedList mergeList = new SingleLinkedList();
+        HeroNode temp1 = l1.head.next;
+        HeroNode temp2 = l2.head.next;
+        HeroNode temp3 = mergeList.head;
+        while (temp1 != null && temp2 != null){
+            if (temp1.id <= temp2.id){
+                mergeList.add(temp1);
+                temp1 = temp1.next;
+            }else {
+                mergeList.add(temp2);
+                temp2 = temp2.next;
+            }
+            temp3 = temp3.next;
+        }
+
+        while (temp2 != null){
+            mergeList.add(temp2);
+            temp2 = temp2.next;
+        }
+
+        while (temp1 != null){
+            mergeList.add(temp1);
+            temp1 = temp1.next;
+        }
+        return mergeList;
+    }
 
 
 }
