@@ -9,6 +9,7 @@ import java.util.Stack;
  * @author lzy
  * @create 2021-11-30 12:00
  * 单链表
+ * 以类HeroNode为节点
  */
 public class SingleLinkedList {
     /**

@@ -1,5 +1,9 @@
-package linkedlist;
+package linkedlist.test;
 
+import linkedlist.DoubleLinkedList;
+import linkedlist.HeroNode;
+import linkedlist.HeroNode2;
+import linkedlist.SingleLinkedList;
 import org.junit.Test;
 
 import java.util.Iterator;
@@ -8,6 +12,7 @@ import java.util.LinkedList;
 /**
  * @author lzy
  * @create 2021-12-01 16:27
+ * 单链表和双向链表的测试
  */
 public class LinkedListTest {
     @Test
@@ -123,6 +128,28 @@ public class LinkedListTest {
 
         SingleLinkedList l3 = l1.mergerLinkedList(l1, l2);
         l3.list();
+
+    }
+
+    /**
+     * 双向链表的测试
+     */
+    @Test
+    public void test6(){
+        HeroNode2 h1 = new HeroNode2(1, "a", "aa");
+        HeroNode2 h2 = new HeroNode2(2, "b", "bb");
+        HeroNode2 h3 = new HeroNode2(3, "c", "cc");
+        HeroNode2 h4 = new HeroNode2(4, "d", "dd");
+        DoubleLinkedList l1 = new DoubleLinkedList();
+        l1.add(h1);
+        l1.add(h2);
+        l1.add(h3);
+        l1.add(h4);
+
+        //l1.list();
+        l1.delete(3);
+        l1.list();
+
 
     }
 }

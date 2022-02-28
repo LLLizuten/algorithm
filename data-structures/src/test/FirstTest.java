@@ -11,10 +11,9 @@ import org.junit.Test;
 public class FirstTest {
     @Test
     public void test(){
-        System.out.println("hello");
-        System.out.println("hot-fix-1");
-        System.out.println("master-test");
-        System.out.println("hot-fix-test");
-        System.out.println("git-hub-1");
+        String[] str = {"2","e"};
+        for (String s : str) {
+            System.out.println(s);
+        }
     }
 }
