@@ -2,6 +2,7 @@ package test;
 
 import org.junit.Test;
 
+import java.util.Arrays;
 
 
 /**
@@ -11,9 +12,22 @@ import org.junit.Test;
 public class FirstTest {
     @Test
     public void test(){
-        String[] str = {"2","e"};
-        for (String s : str) {
-            System.out.println(s);
-        }
+        int[] arr = {1,2,3};
+        int[] arr2 = {6,7,3};
+        arr = arr2;
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void sort(int[] arr){
+        arr[0] = 4;
+    }
+
+    @Test
+    public void test2(){
+        String str = "asd";
+        System.out.println(str.length());
+
+        char[] chars = str.toCharArray();
+        System.out.println(chars.length);
     }
 }

@@ -1,4 +1,4 @@
-package 常见算法;
+package 常见算法.排序算法;
 
 /**
  * @author lzy

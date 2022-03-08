@@ -1,9 +1,10 @@
 package 常见算法.test;
 
 import org.junit.Test;
-import 常见算法.BubbleSort;
-import 常见算法.QuickSort;
-import 常见算法.SelectionSort;
+import 常见算法.排序算法.BubbleSort;
+import 常见算法.排序算法.InsertSort;
+import 常见算法.排序算法.QuickSort;
+import 常见算法.排序算法.SelectionSort;
 
 import java.util.Arrays;
 
@@ -40,8 +41,44 @@ public class SortTest {
      */
     @Test
     public void test3(){
-        int[] arr2 = {3,4,5,6,8,90,7};
+        int[] arr2 = {13,4,65,6,8,90,7};
         int[] sort = BubbleSort.sort(arr2);
+        System.out.println(Arrays.toString(sort));
+
+    }
+
+    /**
+     * 测试自己写的冒泡
+     */
+    @Test
+    public void test4(){
+        int[] arr2 = {13,4,65,6,8,90,7};
+        int[] sort = sort(arr2);
+        System.out.println(Arrays.toString(sort));
+
+    }
+    public static int[] sort(int[] arr){
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[i]){
+                    int temp;
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+
+        }
+        return arr;
+    }
+
+    /**
+     * 测试插入排序
+     */
+    @Test
+    public void test5(){
+        int[] arr2 = {13,4,2,6,8,90,7};
+        int[] sort = InsertSort.insertSort(arr2);
         System.out.println(Arrays.toString(sort));
 
     }
