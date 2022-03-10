@@ -7,6 +7,7 @@ package 常见算法.排序算法;
  * 首先在未排序列中找出最小元素,放入排序队列首位
  * 继续从未排序列中找出最小元素,放入排序队列末尾
  * 循环至排序完成
+ * O(n^2)
  */
 public class SelectionSort {
     public static int[] sort(int[] arr){

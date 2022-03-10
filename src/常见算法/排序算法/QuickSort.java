@@ -3,6 +3,7 @@ package 常见算法.排序算法;
 /**
  * @author lzy
  * @create 2022-02-22 22:24
+ * 时间复杂度：O(nlog(n))
  */
 public class QuickSort {
     public static int[] quickSort(int[] arr, int left, int right){

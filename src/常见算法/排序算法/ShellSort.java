@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author lzy
  * @create 2022-03-01 10:31
  * 希尔排序
- *
+ *  O(n*log(n))~O(n^2)
  */
 public class ShellSort {
     public static void main(String[] args) {

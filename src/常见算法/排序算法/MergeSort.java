@@ -1,11 +1,13 @@
 package 常见算法.排序算法;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
  * @author lzy
  * @create 2022-03-03 17:14
  * 归并排序
+ * 时间复杂度：O(nlog(n))
  * 用到了分治和递归的思想
  * 在一个序列中找到一个中间位置,通常为(left + right / 2),以该位置为基点,将序列划分成两个序列,不断循环此步,直至序列中的每个元素自成一个序列
  * 然后开始合并,在合并过程中逐渐使序列有序
@@ -16,6 +18,7 @@ public class MergeSort {
         //int[] arr2 = {13,4,65};
         mergeSort(arr2, 0, arr2.length - 1);
         System.out.println(Arrays.toString(arr2));
+        ArrayList<String> list = new ArrayList<>();
     }
     public static void mergeSort(int[] arr, int left, int right){
         //递归的终止条件,如果只有一个元素(left == right)则不用继续划分

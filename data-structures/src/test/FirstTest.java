@@ -30,4 +30,15 @@ public class FirstTest {
         char[] chars = str.toCharArray();
         System.out.println(chars.length);
     }
+
+    @Test
+    public void test3(){
+        AbstractProduct pro = new ProductA1();
+        pro.create();
+        Animal dog = new Dog();
+        dog.say();
+
+        Dog dog1 = new Dog();
+        dog1.dog();
+    }
 }
