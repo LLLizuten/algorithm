@@ -32,7 +32,7 @@ public class FindRestaurant {
 
                     list.add(list2[i]);
                 }else if (i + j == sum){
-
+                    //索引和相等,说明相同元素有多个,一起放进列表
                     list.add(list2[i]);
                 }
             }
