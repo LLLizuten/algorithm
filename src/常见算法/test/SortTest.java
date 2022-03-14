@@ -25,6 +25,7 @@ public class SortTest {
         System.out.println("----");
         int[] ints1 = QuickSort.quickSort(arr2, 0, 5);
         System.out.println(Arrays.toString(ints1));
+        
     }
     /**
      * 测试选择排序
