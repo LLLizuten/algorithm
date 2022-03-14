@@ -18,9 +18,14 @@ public class SortTest {
      */
     @Test
     public void test1(){
-        int[] arr1 = {12,23,54,2};
-        int[] ints = QuickSort.quickSort(arr1, 0, 3);
+        int[] arr1 = {1,2,44,5,66};
+        int[] arr2 = {3,4,55,6,8,90};
+        int[] ints = QuickSort.quickSort(arr1, 0, 4);
         System.out.println(Arrays.toString(ints));
+        System.out.println("----");
+        int[] ints1 = QuickSort.quickSort(arr2, 0, 5);
+        System.out.println(Arrays.toString(ints1));
+
 
     }
     /**
