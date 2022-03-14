@@ -1,4 +1,4 @@
-package 双指针;
+package leetcode.双指针;
 
 import java.util.Arrays;
 

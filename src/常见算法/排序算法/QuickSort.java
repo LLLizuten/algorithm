@@ -4,33 +4,38 @@ package 常见算法.排序算法;
  * @author lzy
  * @create 2022-02-22 22:24
  * 时间复杂度：O(nlog(n))
+ * 分治思想
+ * 递归划分
  */
 public class QuickSort {
     public static int[] quickSort(int[] arr, int left, int right){
         //递归终止条件:当只有一个元素时停止划分(此时left==right)
         if (left < right){
+            //经过第一次排序后,partitionIndex所在位置即为正确位置
             int partitionIndex = partition2(arr, left, right);
             quickSort(arr, left, partitionIndex - 1);
             quickSort(arr, partitionIndex + 1, right);
         }
         return arr;
     }
-    public static int partition(int[] arr, int left, int right){
-        int pivot = left;
-        int index = pivot + 1;
-        for (int i = index; i <= right; i++) {
-            if (arr[i] < arr[pivot] ){
-                swap(arr, i, index);
-                index++;
-            }
-        }
-        swap(arr, pivot, index - 1);
-        return index - 1;
-    }
+
     private static void swap(int[] arr, int index1, int index2){
         int temp = arr[index1];
         arr[index1] = arr[index2];
         arr[index2] = temp;
+    }
+
+    public static int partition(int[] arr, int left, int right){
+        int pivot = arr[right];
+        int i = left;
+        for (int j = left; j < right; j++) {
+            if (arr[j] < pivot){
+                swap(arr, i, j);
+                i++;
+            }
+        }
+        swap(arr, i, right);
+        return i;
     }
     public static int partition2(int[] arr, int left, int right){
         //选最后一个元素作为pivot元素
