@@ -12,13 +12,25 @@ public class TreeNode {
     TreeNode() {
     }
 
-    TreeNode(int val) {
+    public TreeNode(int val) {
         this.val = val;
     }
 
-    TreeNode(int val, TreeNode left, TreeNode right) {
+    public TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;
+    }
+
+    public void traverse(TreeNode root, int level) {
+        if (root == null) {
+            return;
+        }
+        // 前序位置
+
+        traverse(root.left, level + 1);
+
+        traverse(root.right, level + 1);
+        System.out.println("节点" + root.val + "在" + level + "层");
     }
 }
