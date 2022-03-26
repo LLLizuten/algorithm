@@ -2,8 +2,6 @@ package top100;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-
 /**
  * @author lzy
  * @create 2021-12-01 23:01
@@ -51,8 +49,6 @@ public class CombineTwoOrderedLinkedLists {
 
         ListNode l3 = mergeTwoLists(l1, l2);
         System.out.println(l3);
-
-
     }
 }
 
