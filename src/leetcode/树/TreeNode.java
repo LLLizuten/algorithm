@@ -2,7 +2,7 @@ package leetcode.树;
 
 /**
  * @author lzy
- * @create 2022-03-17 15:46
+ * 2022-03-17 15:46
  */
 public class TreeNode {
     int val;
@@ -29,8 +29,8 @@ public class TreeNode {
         // 前序位置
 
         traverse(root.left, level + 1);
-
-        traverse(root.right, level + 1);
         System.out.println("节点" + root.val + "在" + level + "层");
+        traverse(root.right, level + 1);
+
     }
 }
