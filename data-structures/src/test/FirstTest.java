@@ -1,6 +1,6 @@
 package test;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
@@ -40,5 +40,29 @@ public class FirstTest {
 
         Dog dog1 = new Dog();
         dog1.dog();
+    }
+
+    @Test
+    public void test4(){
+        mystery(1234);
+    }
+    public void mystery (int x)
+    {
+        System.out.print(x % 10);
+
+        if ((x / 10) != 0)
+        {
+            mystery(x / 10);
+        }
+        System.out.print(x % 10);
+    }
+
+    @Test
+    public void test5(){
+        String str = "2";
+        int num = 3;
+        System.out.println(str + num);
+        System.out.println(num + str);
+
     }
 }

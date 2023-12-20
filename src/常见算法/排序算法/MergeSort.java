@@ -20,18 +20,24 @@ public class MergeSort {
         System.out.println(Arrays.toString(arr2));
         ArrayList<String> list = new ArrayList<>();
     }
+
+    /**
+     * 归并排序入口
+     */
     public static void mergeSort(int[] arr, int left, int right){
         //递归的终止条件,如果只有一个元素(left == right)则不用继续划分
         if (left < right){
             //找中间点
             int mid = (left + right) / 2;
+            //递归划分左半区和右半区
             mergeSort(arr, left, mid);
             mergeSort(arr, mid + 1, right);
+            //后序位置，对已经划分好的左右半区进行合并
             merge(arr, left, mid, right);
         }
-
     }
     public static void merge(int[] arr, int left, int mid, int right){
+        //定义一个辅助数组
         //分别比较已划分的两个序列的首位元素,按次序合并到新序列中
         int[] arr2 = new int[arr.length];
         //辅助指针,用于帮助arr2数组添加新元素

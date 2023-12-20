@@ -1,5 +1,7 @@
 package 常见算法.排序算法;
 
+import java.util.Arrays;
+
 /**
  * @author lzy
  * @create 2022-02-22 23:25
@@ -9,6 +11,11 @@ package 常见算法.排序算法;
  * 时间复杂度O(n^2)
  */
 public class BubbleSort {
+    public static void main(String[] args) {
+        int[] arr = {3,1,2,6,7,8,9,5,4};
+        int[] sort = sort(arr);
+        System.out.println(Arrays.toString(sort));
+    }
     public static int[] sort(int[] arr){
         if (arr == null || arr.length < 2){
             return arr;
@@ -31,7 +38,6 @@ public class BubbleSort {
                 break;
             }
         }
-
         return arr;
     }
 }

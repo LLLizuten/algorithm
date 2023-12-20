@@ -14,7 +14,6 @@ public class MaxDepth {
         if (root == null) {
             return 0;
         }
-        //返回值
 
         //本次递归做什么:寻找左右子树的最大深度
         int max1 = maxDepth(root.left);

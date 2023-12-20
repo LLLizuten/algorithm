@@ -1,4 +1,4 @@
-package recursive;
+package 回溯法;
 
 /**
  * @author lzy

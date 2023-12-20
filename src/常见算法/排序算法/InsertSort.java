@@ -1,5 +1,4 @@
 package 常见算法.排序算法;
-
 /**
  * @author lzy
  * @create 2022-02-28 22:28
@@ -25,7 +24,6 @@ public class InsertSort {
             // 如果进入上面while循环，已发生index--,插入元素需要通过index+1的方式来取代之前元素所在位置;
             // 没进入while循环:说明插入元素>前一个元素,插入已排序队尾
             arr[index + 1] = insertValue;
-
         }
         return arr;
     }

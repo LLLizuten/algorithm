@@ -18,7 +18,7 @@ public class ConstructMaximumBinaryTree {
         if (left > right) {
             return null;
         }
-        //定义一个index用于标记
+        //定义一个index用于标记最大元素所处的位置
         int index = -1;
         //定义一个maxValue存放数组中的最大元素
         int maxValue = Integer.MIN_VALUE;
@@ -36,4 +36,5 @@ public class ConstructMaximumBinaryTree {
 
         return root;
     }
+
 }
