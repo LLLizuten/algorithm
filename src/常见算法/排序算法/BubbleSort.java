@@ -24,7 +24,7 @@ public class BubbleSort {
         for (int i = 0; i < arr.length - 1; i++) {
             //优化:标记本轮中是否发生了交换,若没有交换,表示待排序列已经有序,排序已完成
             boolean isSwap = false;
-            //每一轮比较都可以确定一个最大数,故循环次数每次-1
+            //每一轮比较都可以确定一个最大数,故循环次数每次-i
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] > arr[j + 1]){
                     int temp = arr[j];
