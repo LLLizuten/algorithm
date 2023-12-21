@@ -27,7 +27,7 @@ public class HeapSort {
             arr[0] = arr[i];
             arr[i] = temp;
             // 每次交换后重新调整堆
-            heapify(arr, arr.length, 0);
+            heapify(arr, i, 0);
         }
     }
 
