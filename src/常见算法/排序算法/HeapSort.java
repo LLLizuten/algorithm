@@ -26,14 +26,13 @@ public class HeapSort {
             int temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
-            // 每次交换后重新调整堆
+            // 每次交换后重新调整堆, 注意这里的i每次都会减1, 对应第2点
             heapify(arr, i, 0);
         }
     }
 
     /**
      * 构建最大堆
-     * @param arr
      */
     public void buildHeap(int[] arr) {
         int n = arr.length;
