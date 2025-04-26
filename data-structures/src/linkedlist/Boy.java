@@ -19,4 +19,5 @@ public class Boy {
                 ", next=" + next +
                 '}';
     }
+
 }
